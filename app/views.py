@@ -43,3 +43,9 @@ def display_ac(request):
         return HttpResponse('insert accessrecods data Successsfully')
 
     return render(request,'display_ac.html',d)
+
+def display_webpage(request):
+    ou=webpg.objects.all()
+    d={'webp':ou}
+    return render(request,'display_webpage.html',d)
+
