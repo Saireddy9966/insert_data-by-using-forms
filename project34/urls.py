@@ -22,6 +22,7 @@ urlpatterns = [
     path('display_form/',display_form,name='display_form'),
     path('display_wp/',display_wp,name='display_wp'),
     path('display_ac/',display_ac,name='display_ac'),
-    path('retrieve_data/',retrieve_data,name='retrieve_data'),
-    path('display_webpage/',display_webpage,name='display_webpage'),
+    path('retrive/',retrive,name='retrive'),
+    path('checkbox/',checkbox,name='checkbox'),
+    path('radio/',radio,name='radio'),
 ]

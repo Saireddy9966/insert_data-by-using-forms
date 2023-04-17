@@ -44,8 +44,30 @@ def display_ac(request):
 
     return render(request,'display_ac.html',d)
 
-def display_webpage(request):
-    ou=webpg.objects.all()
-    d={'webp':ou}
-    return render(request,'display_webpage.html',d)
+
+
+
+def retrive(request):
+    pp=Topic.objects.all()
+    d={'topic':pp}
+    if request.method=='POST':
+        td=request.POST.getlist('tn')
+        print(td)
+        webquery=webpg.objects.none()
+        for i in td:
+            webquery=webquery|webpg.objects.filter(topic_name=i)
+        d1={'webpage':webquery}
+        return render(request,'display_webpage.html',d1)
+    return render(request,'retrive.html',d)
+
+def checkbox(request):
+    lto=Topic.objects.all()
+    d={'topic':lto}
+    return render(request,'checkbox.html',d)
+
+
+def radio(request):
+    lto=Topic.objects.all()
+    d={'topic':lto}
+    return render(request,'radio.html',d)
 
